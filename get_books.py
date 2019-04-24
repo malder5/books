@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
-import requests
 
+import requests
+import csv
+import openpyxl
+from bs4 import BeautifulSoup
 
 
 def main():
@@ -17,7 +20,7 @@ def get_html(url):
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
         }
         r = requests.get(url=url, headers=user_agent)
-        print(r.text)
+        return r.text
     except:
         print(r.status_code)
 
