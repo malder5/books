@@ -3,7 +3,8 @@ import requests
 
 
 def main():
-    url = 'https://ya.ru'
+    search_word = 'docker'
+    url = 'https://allitebooks.com?s={}'.format(search_word)
     get_html(url)
 
 
@@ -17,6 +18,7 @@ def get_html(url):
         print(r.text)
     except:
         print(r.status_code)
+
 
 
 if __name__ == '__main__':
